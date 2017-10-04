@@ -6,8 +6,8 @@ const parser = require('rss-parser')
  * parseFeed - a function used to parse an rss
  * feed specified by a url.
  * @param  {string} url the source url of the rss feed.
- * @return {object}     a promise object. If resolved an
- * rss feed object will be returned, otherwise an error
+ * @return {object} a promise object. If resolved an rss
+ * feed object will be returned, otherwise an error
  * object.
  */
 exports.parseFeed = function(url) {
@@ -31,8 +31,8 @@ exports.parseFeed = function(url) {
  * elements required.
  * @param  {object} feed an object containing only the
  * feed data of an rss feed.
- * @return {object}			 a resolved promise object
- * containing a filtered rss feed.
+ * @return {object}	a resolved promise object containing
+ * a filtered rss feed.
  */
 exports.filterFeed = function(feed) {
 	return new Promise((resolve, reject) => {
