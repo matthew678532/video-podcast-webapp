@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/matthew678532/video-podcast-webapp/issues"
   },
-  "homepage": "https://github.com/matthew678532/video-podcast-webapp#readme"
+  "homepage": "https://github.com/matthew678532/video-podcast-webapp#readme",
+  "dependencies": {
+    "rss-parser": "^2.10.6"
+  }
 }
