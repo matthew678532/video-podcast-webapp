@@ -4,7 +4,7 @@ const express = require('express')
 const path = require('path')
 const routes = {
 	index: require('./routes/index.js'),
-	video: require('/routes/video.js')
+	video: require('./routes/video.js')
 }
 
 const app = express()
