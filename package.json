@@ -1,0 +1,24 @@
+{
+  "name": "video-podcast-webapp",
+  "version": "1.0.0",
+  "description": "A video podcast web application created for Accedo as part of their application process.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthew678532/video-podcast-webapp.git"
+  },
+  "keywords": [
+    "video",
+    "podcast",
+    "webapp"
+  ],
+  "author": "Matthew Birch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthew678532/video-podcast-webapp/issues"
+  },
+  "homepage": "https://github.com/matthew678532/video-podcast-webapp#readme"
+}
