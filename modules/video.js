@@ -1,5 +1,7 @@
 'use strict'
 
+const error = require('./helpers/error.js').error
+
 /**
  * validateId - a function used to ensure a valid
  * id is passed along with a request for a video, to
@@ -16,7 +18,7 @@ exports.validateId = function(id, res) {
 	return new Promise((resolve, reject) => {
 		const nId = Number(id)
 		if (!(nId > -1) && !(nId < res.data.entries.length + 1)) {
-			return reject(Error('Invalid/Out of range parameter'))
+			return reject(Error(error.invalidParam))
 		}
 		resolve(nId)
 	})

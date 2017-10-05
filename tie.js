@@ -30,7 +30,7 @@ exports.parseRss = function(req, res, next) {
 		res.data = cachedFeed
 		next()
 	} else {
-		parse.parseFeed(url).then(res => {
+		parse.parseFeed(config.serviceUrl).then(res => {
 			return parse.filterFeed(res)
 		}).then(feed => {
 			cache.put(key, feed, duration)

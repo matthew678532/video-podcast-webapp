@@ -1,5 +1,7 @@
 'use strict'
 
+const error = require('./error.js').error
+
 /**
  * extractParam - a function used to check for
  * the presence of a parameter upon a user
@@ -16,9 +18,9 @@
 exports.extractParam = function(req, param) {
 	return new Promise((resolve, reject) => {
 		if (req.params === undefined) {
-			return reject(Error('Invalid parameter'))
+			return reject(Error(error.missingParam))
 		} else if (req.params[param] === undefined) {
-			return reject(Error('Invalid parameter'))
+			return reject(Error(error.missingParam))
 		} else {
 			resolve(req.params[param])
 		}
