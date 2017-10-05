@@ -1,0 +1,17 @@
+extends templates/layouts.pug
+
+block content
+	.body-container
+		header.header
+			h1= title
+			p= description
+		section#main
+			section#vid
+				#vid-area
+					video(id='cur-vid', controls, autoplay)
+						source(src='', type='video/mp4')
+				#vid-desc
+					p= description
+			aside#vid-list
+				a.vid-list-item(href='#')
+				
