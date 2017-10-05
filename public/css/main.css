@@ -1,10 +1,10 @@
-/* Font Imports */
+/* Font imports */
 
 @import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans:600');
 
-/* Project Base Styles */
+/* Project base styles */
 
-/* Body Presets */
+/* Body presets */
 html, body {
 	font-family: 'Lora', serif;
 	font-size: 16px;
@@ -16,7 +16,7 @@ html, body {
 	-webkit-font-smoothing: antialiased !important;
 }
 
-/* Box Sizing Dimens */
+/* Box sizing dimens */
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -26,7 +26,7 @@ img::selection, ::selection {
 	background: rgba(225, 27, 34, 0.2);
 }
 
-/* Link Presets */
+/* Link presets */
 a {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 500;
@@ -35,7 +35,7 @@ a {
 	display: block;
 }
 
-/* Typography Presets */
+/* Typography presets */
 h1, h2, h3, h4, h5, h6, p {
 	color: #263238;
 }
@@ -80,7 +80,7 @@ p {
 	line-height: 1.6;
 }
 
-/* Page Container */
+/* Page container */
 .container {
 	padding: 2rem;
 	margin: 0 auto;
@@ -91,20 +91,20 @@ p {
 	margin-bottom: 1rem;
 }
 
-/* Current Vid Styles */
+/* Current vid styles */
 #cur-vid {
 	width: 100%;
 	background-color: black;
 }
 
-/* Video List Container Styling */
+/* Video list container styling */
 #vid-list {
 	height: 24rem;
 	overflow-y: scroll;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-/* Video List Element Styling */
+/* Video list element styling */
 #vid-list > .vid-list-item {
 	padding: 1rem;
 	transition: background-color 350ms ease-in-out;
@@ -118,29 +118,41 @@ p {
 	background-color: #E0E0E0;
 }
 
+/* Signify the currently active video */
+.active {
+	background-color: #E11B22;
+}
+
+/* Adapt content for smaller devices */
 @media screen and (min-width: 1137px) {
+	/* Restrict container size for specification */
 	.container {
 		max-width: 1280px;
 		max-height: 720px;
 	}
 
+	/* Display the video player and video list side by side */
 	.main {
 		display: flex;
 	}
 
+	/* Specify the width of the video player & description */
 	#vid {
 		margin-right: 1rem;
 		width: 70%;
 	}
 
+	/* Specify the height of the video player */
 	#cur-vid {
 		height: 24rem;
 	}
 
+	/* Specify the width of the video list */
 	#vid-list {
 		width: 30%;
 	}
 
+	/* Specify the height of the video list items (1/4 of the video player) */
 	#vid-list > .vid-list-item {
 		height: 6rem;
 	}
