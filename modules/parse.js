@@ -1,9 +1,9 @@
 'use strict'
 
 /**
- * Needs to be a var so that parser, and parsers
- * publically available methods can be overridden
- * during testing.
+ * Needs to be a var so that rss-parser methods
+ * can be accessed and overridden during unit
+ * testing.
  */
 var parser = require('rss-parser')
 
@@ -22,7 +22,6 @@ exports.parseFeed = function(url) {
 		parser.parseURL(url, (err, res) => {
 			if (err) return reject(Error(error.failedToConnect))
 			if (!res) return reject(Error(error.failedToParse))
-			console.log(res)
 
 			const feed = res.feed
 
