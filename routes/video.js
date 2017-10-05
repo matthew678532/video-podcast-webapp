@@ -21,20 +21,21 @@ const parseRss = function(req, res, next) {
 router.use(parseRss)
 
 router.get('/:id', function(req, res, next) {
-	util.extractParam(req, 'id').then(id => {
-		console.log('Extracted Param')
-		return video.validateId(id, res)
-	}).then(id => {
-		console.log('Validated Id')
-		return video.specifyVideo(id, res)
-	}).then(res => {
-		console.log('Specified Video')
-		res.send(res.data)
-	}).catch(err => {
-		res.send(err.message)
-	}).then(() => {
-		res.end()
-	})
+	if (res.err) {
+		res.render('error', {message: res.err.message})
+	} else {
+		util.extractParam(req, 'id').then(id => {
+			return video.validateId(id, res)
+		}).then(id => {
+			return video.specifyVideo(id, res)
+		}).then(res => {
+			res.render('video', res.data)
+		}).catch(err => {
+			res.render('error', err.message)
+		}).then(() => {
+			res.end()
+		})
+	}
 })
 
 module.exports = router

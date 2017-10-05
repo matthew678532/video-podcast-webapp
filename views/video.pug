@@ -5,13 +5,23 @@ block content
 		header.header
 			h1= title
 			p= description
-		section#main
+		section.main
 			section#vid
-				#vid-area
-					video(id='cur-vid', controls, autoplay)
-						source(src='', type='video/mp4')
-				#vid-desc
-					p= description
+				each entry in entries
+					if entry.state == 'active'
+						#vid-area
+							video(id='cur-vid', controls, autoplay)
+								source(src=entry.link, type='video/mp4')
+						#vid-desc
+							p= entry.description
 			aside#vid-list
-				a.vid-list-item(href='#')
+				each entry in entries
+					if entry.state == 'active'
+						a.vid-list-item.active(href='/video/' + entry.id)
+							h2= entry.title
+							p= entry.pubDate
+					else
+						a.vid-list-item(href='/video/' + entry.id)
+							h2= entry.title
+							p= entry.pubDate
 				
