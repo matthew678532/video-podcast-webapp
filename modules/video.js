@@ -21,3 +21,28 @@ exports.validateId = function(id, res) {
 		resolve(nId)
 	})
 }
+
+/**
+ * specifyVideo - a function used to match
+ * a requested video by id, to the actual video
+ * within a collection by setting the state of
+ * the video to active (if matched), or inactive
+ * (if not matched).
+ * @param  {number} id  a video id.
+ * @param  {object} res a response object containing
+ * some rss feed data.
+ * @return {object} a promise object returning the rss
+ * feed response data after alterations.
+ */
+exports.specifyVideo = function(id, res) {
+	return new Promise((resolve, reject) => {
+		res.data.entries.forEach(entry => {
+			if (id === entry.id) {
+				entry.state = 'active'
+			} else {
+				entry.state = 'inactive'
+			}
+		})
+		resolve(res)
+	})
+}
