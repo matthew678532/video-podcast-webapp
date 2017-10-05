@@ -7,8 +7,8 @@ pids
 *.pid
 *.seed
 
-# Coverage directory used by tools like istanbul
-coverage
+# Docs directory
+docs
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release

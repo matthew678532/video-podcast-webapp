@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "node spec/runner/runner.js"
+    "test": "node spec/runner/runner.js",
+    "coverage": "node_modules/.bin/istanbul cover --include-all-sources --dir docs/coverage/ -x **/spec/** -x **/public/** -x **app.js** -x **config.js** -x **test.js** spec/runner/runner.js",
+		"jsdoc": "node_modules/.bin/jsdoc -d docs/jsdoc/ modules/"
   },
   "repository": {
     "type": "git",
@@ -29,8 +31,10 @@
     "rss-parser": "^2.10.6"
   },
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "jasmine": "^2.8.0",
     "jasmine-console-reporter": "^2.0.1",
+    "jsdoc": "^3.5.5",
     "rewire": "^2.5.2"
   }
 }
