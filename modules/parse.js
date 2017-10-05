@@ -42,17 +42,19 @@ exports.filterFeed = function(feed) {
 			entries: []
 		}
 
-		feed.entries.forEach(entry => {
+		feed.entries.forEach((entry, index) => {
 			const title = entry.title
 			const description = entry.contentSnippet
 			const pubDate = entry.pubDate
 			const link = entry.link
+			const id = index
 
 			filteredFeed.entries.push({
 				title,
 				description,
 				pubDate,
-				link
+				link,
+				id
 			})
 		})
 		resolve(filteredFeed)
