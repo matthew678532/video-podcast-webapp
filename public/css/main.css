@@ -1,0 +1,147 @@
+/* Font Imports */
+
+@import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans:600');
+
+/* Project Base Styles */
+
+/* Body Presets */
+html, body {
+	font-family: 'Lora', serif;
+	font-size: 16px;
+	line-height: 1;
+	color: #263238;
+	max-width: 100%;
+	position: relative;
+	-webkit-tap-highlight-color: rgba(225, 27, 34, 0.2);
+	-webkit-font-smoothing: antialiased !important;
+}
+
+/* Box Sizing Dimens */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+/* Selections */
+img::selection, ::selection {
+	background: rgba(225, 27, 34, 0.2);
+}
+
+/* Link Presets */
+a {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+	text-decoration: none;
+	outline: none;
+	display: block;
+}
+
+/* Typography Presets */
+h1, h2, h3, h4, h5, h6, p {
+	color: #263238;
+}
+
+h1, h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+h3, h4, h5, h6, p {
+	font-family: 'Lora', serif;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 2.5rem;
+	line-height: 1.10;
+}
+
+h2 {
+	font-size: 2rem;
+	line-height: 1.05;
+}
+
+h3 {
+	font-size: 1.8rem;
+}
+
+h4 {
+	font-size: 1.6rem;
+}
+
+h5 {
+	font-size: 1.4rem;
+}
+
+h6 {
+	font-size: 1.2rem;
+}
+
+p {
+	line-height: 1.6;
+}
+
+/* Page Container */
+.container {
+	padding: 2rem;
+	margin: 0 auto;
+}
+
+/* Spacings */
+.header, .header > h1, #vid, #vid-area, #vid-desc:nth-child(1) {
+	margin-bottom: 1rem;
+}
+
+/* Current Vid Styles */
+#cur-vid {
+	width: 100%;
+	background-color: black;
+}
+
+/* Video List Container Styling */
+#vid-list {
+	height: 24rem;
+	overflow-y: scroll;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/* Video List Element Styling */
+#vid-list > .vid-list-item {
+	padding: 1rem;
+	transition: background-color 350ms ease-in-out;
+}
+
+#vid-list > .vid-list-item:not(:last-child) {
+	border-bottom: 1px solid #E0E0E0;
+}
+
+#vid-list > .vid-list-item:hover {
+	background-color: #E0E0E0;
+}
+
+@media screen and (min-width: 1137px) {
+	.container {
+		max-width: 1280px;
+		max-height: 720px;
+	}
+
+	.main {
+		display: flex;
+	}
+
+	#vid {
+		margin-right: 1rem;
+		width: 70%;
+	}
+
+	#cur-vid {
+		height: 24rem;
+	}
+
+	#vid-list {
+		width: 30%;
+	}
+
+	#vid-list > .vid-list-item {
+		height: 6rem;
+	}
+}
