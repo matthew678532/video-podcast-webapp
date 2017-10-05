@@ -16,7 +16,7 @@ const parseRss = function(req, res, next) {
 
 router.use(parseRss)
 
-router.get('/', function(req, res, next) {
+router.get('/:id', function(req, res, next) {
 
 })
 
