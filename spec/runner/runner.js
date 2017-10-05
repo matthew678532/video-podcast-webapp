@@ -1,12 +1,17 @@
 'use strict'
 
-const config = require('./../../config.js').jasmine
 const Jasmine = require('jasmine')
 const JasmineConsoleReporter = require('jasmine-console-reporter')
 
 const jasmine = new Jasmine()
 
-jasmine.loadConfigFile(config)
+jasmine.loadConfig({
+	"spec_dir": "spec",
+	"spec_files": [
+		"**/*[sS]pec.js"
+	],
+	"stopSpecOnExpectationFailure": false
+})
 
 const reporter = new JasmineConsoleReporter({
 	colors: true,

@@ -4,7 +4,8 @@
   "description": "A video podcast web application created for Accedo as part of their application process.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "node spec/runner/runner.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "jasmine": "^2.8.0",
-    "jasmine-console-reporter": "^2.0.1"
+    "jasmine-console-reporter": "^2.0.1",
+    "rewire": "^2.5.2"
   }
 }
